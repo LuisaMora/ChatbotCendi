@@ -52,6 +52,48 @@
          ]
       },
       {
+         "tag":"hitoria_colegio",
+         "patterns":[
+            "Cual es la historia del colegio",
+            "Historia del colegio",
+            "Cuando fue creada"
+         ],
+         "responses":[
+            "La unidad educativa CENDI pertenece a la Facultad de Humanidades y ciencias de la Educación de la UMSS, creada el 20 de Mayo de 1988, como una alternaiva educacional. Actualmente cuenta con l os niveles Primario y Secundario."
+         ],
+         "context":[
+            ""
+         ]
+      },
+      {
+         "tag":"vision_colegio",
+         "patterns":[
+            "Cual es la vision del colegio",
+            "Vision de colegio",
+            "Que vision tiene el colegio"
+         ],
+         "responses":[
+            "La Unidad Educativa CENDI tiene como visión, ser un modelo y lider en la formación integral de estudiantes, con alto nivel académico e investigativo, solidaridad, cooperacion, respeto de la  diversidad cultural, su medio ambiente, los derechos humanos, con amor a su patria y que contribuyan al desarrollo nacional."
+         ],
+         "context":[
+            ""
+         ]
+      },
+      {
+         "tag":"mision_colegio",
+         "patterns":[
+            "Cual es la mision del colegio",
+            "Mision de colegio",
+            "Que mision tiene el colegio"
+         ],
+         "responses":[
+            "La misión de la unidad educativva es la de desarrollar en los estudiantes, un modelo educativo integral, capaz de construir una sociedad justa, solidaria respetuosa de los derechos humanos, elmedio ambiente, la diversidad cuntural. generando valores que integren a la familia con la comunidad educativa, a través del bachillerato diversificado en nexo con la Educación superior, preparados para la produccion y mantenimiento de la vida, repondiendo adecuadamente a los desafios de la sociedad."
+         ],
+         "context":[
+            ""
+         ]
+      },
+      {
          "tag":"hora_atencion",
          "patterns":[
             "Cual es su horario de atencion",
@@ -83,7 +125,7 @@
       {
          "tag":"no_entiendo",
          "patterns":[
-            
+            ""
          ],
          "responses":[
             "No puedo responderte esa pregunta, lo siento ",
