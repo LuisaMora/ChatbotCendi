@@ -134,6 +134,98 @@
          "context":[
             ""
          ]
+      },
+      {
+         "tag":"requisitos_de_inscripcion",
+         "patterns":[
+            "Requisitos de Inscripcion",
+            "Que documentos necesito para la inscripcion",
+            "Que debo tener para inscribirme en el colegio"
+         ],
+         "responses":[
+            " Lista de requisitos:*Libreta electrónica de la gestión 2021 fotocopia legible *Certificado de nacimiento computarizado fotocopia legible *Carnet de identidad en vigencia del estudiante fotocopia legible  *2 fotos 3x4 fondo azul camisa blanca *Carnet de identidad en vigencia del Padre y Madre de Familia fotocopia legible"
+         ],
+         "context":[
+            ""
+         ]
+      },
+      {
+         "tag":"fechas_de_inscripción_nuevos",
+         "patterns":[
+            "Cuando son las fechas de inscripcion para alumnos nuevos",
+            "Cuando se pueden inscribir los alumnos nuevos",
+            "Fechas de inscripcion alumnos nuevos",
+            "Fechas de inscripcion nuevos"
+         ],
+         "responses":[
+            "Horario de inscripción 08:00 a.m. A 13:00 p.m. Lunes 17 y Martes 18 de Enero"
+         ],
+         "context":[
+            ""
+         ]
+      },
+      {
+         "tag":"fechas_de_inscripción_antiguos",
+         "patterns":[
+            "Cuando son las fechas de inscripcion para alumnos antiguos",
+            "Cuando se pueden inscribir los alumnos antiguos",
+            "Fechas de inscripcion alumnos antiguos",
+            "Fechas de inscripcion antiguos"
+         ],
+         "responses":[
+            "Horario de inscripción 08:00 a.m. A 13:00 p.m. Miércoles 19 de Enero * 2º, 3º, 4º y 5º de Primaria Jueves 20 de Enero* 6º de Primaria y 1º, 2º y 3º Secundaria Viernes 21 de Enero * 4º, 5º y 6º Secundaria"
+         ],
+         "context":[
+            ""
+         ]
+      },
+      {
+         "tag":"horarios_primaria",
+         "patterns":[
+            "Horarios primaria"
+         ],
+         "responses":[
+            "En este documento se detalla los horarios del nivel primario :https://drive.google.com/file/d/15z__fPdZvPCaKs-_82bajI2S42Xx2GC0/view"
+         ],
+         "context":[
+            ""
+         ]
+      },
+      {
+         "tag":"horarios_secundaria",
+         "patterns":[
+            "Horarios secundaria"
+         ],
+         "responses":[
+            "En este documento se detalla los horarios de nivel secundario :https://drive.google.com/file/d/1jRbRg7a_JBcbHmYtQuAL3KyFGfEFNtAi/view"
+         ],
+         "context":[
+            ""
+         ]
+      },
+      {
+         "tag":"pagos",
+         "patterns":[
+            "Cuales son las fechas de pagos de las mensualidades",
+            "Pagos de mensualidades",
+            "Plan de pagos del colegio",
+            "Plan de pagos"
+         ],
+         "responses":[
+            "En este documento se mostrara el plan de pagos del colegio :https://drive.google.com/file/d/1AH_3Ct8tGv1C1EgkXy4nqsXPK8bW8XGc/view"
+         ],
+         "context":[
+            ""
+         ]
       }
+      
+      
+       
+
+
+
+
+
+
    ]
 }
