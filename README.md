@@ -14,5 +14,5 @@ ia2_entorno\Scripts\activate.ps1
 ### Instalar dependencias
 ```python
 ia2_entorno\Scripts\python.exe -m pip install --upgrade pip
-pip install -U nltk  numpy tensorflow
+pip install -U nltk  numpy tensorflow flask
 ```
