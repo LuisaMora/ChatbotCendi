@@ -19,8 +19,13 @@
     padding: 20px;
     margin: 10px;
 }
+.chatbot{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 4%
+}
 .boton_personalizado{
-    margin-left: 1000px;
+    /* margin-left: 1000px; */
     text-decoration: none;
     padding: 10px;
     font-weight: 600;
@@ -29,4 +34,13 @@
     background-color: #0a157e;
     border-radius: 6px;
     border: 2px solid #0016b0;
+    background-image: url(./imagenes/robot.png);
+    background-size: 40px ;
+    background-repeat: no-repeat;
+    background-position: left;
+    padding-left: 40px;
+    cursor: pointer;
+  }
+  .boton_personalizado:hover {
+    background-color: #2033BA;
   }
