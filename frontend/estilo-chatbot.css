@@ -317,3 +317,26 @@ button, input, optgroup, select, textarea {
 .text-info {
     color: #48b0f7 !important;
 }
+
+.boton_personalizado{
+    /* margin-left: 1000px; */
+    text-decoration: none;
+    padding: 10px;
+    /* font-weight: 600; */
+    /* font-size: 20px; */
+    width: 60px;
+    height: 36px;
+    color: #ffffff; 
+    /* background-color: #26223f; */
+    border-radius: 10%;
+    border: 2px solid #1976D2;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHZpZXdCb3g9IjAgMCAxNzIgMTcyIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9Im5vbnplcm8iIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBzdHJva2UtbGluZWNhcD0iYnV0dCIgc3Ryb2tlLWxpbmVqb2luPSJtaXRlciIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBzdHJva2UtZGFzaGFycmF5PSIiIHN0cm9rZS1kYXNob2Zmc2V0PSIwIiBmb250LWZhbWlseT0ibm9uZSIgZm9udC13ZWlnaHQ9Im5vbmUiIGZvbnQtc2l6ZT0ibm9uZSIgdGV4dC1hbmNob3I9Im5vbmUiIHN0eWxlPSJtaXgtYmxlbmQtbW9kZTogbm9ybWFsIj48cGF0aCBkPSJNMCwxNzJ2LTE3MmgxNzJ2MTcyeiIgZmlsbD0ibm9uZSI+PC9wYXRoPjxnPjxwYXRoIGQ9Ik0xMy40Njk3NSwxNTAuNWwtMi43MTk3NSwtNDYuMzc1NWwzLjYyNjMzLC0xNy45ODExN2wtMy42MjYzMywtMTcuOTYzMjVsMy42MjYzMywtNDYuNjgwMDhsMTQ2Ljg3MzY3LDY0LjM0OTV6IiBmaWxsPSIjMzQ0OTVlIj48L3BhdGg+PHBhdGggZD0iTTEwLjc1LDEwNC4xMDY1OGwzLjYyNjMzLC0xNy45NjMyNWwtMy42MjYzMywtMTcuOTQ1MzNsMTM2LjkwODQyLDE3Ljk0NTMzeiIgZmlsbD0iIzE5NzZkMiI+PC9wYXRoPjwvZz48L2c+PC9zdmc+);
+    background-size: 35px 30px ;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* padding-left: 40px; */
+    cursor: pointer;
+  }
+  .boton_personalizado:hover {
+    background-color: #1976D2;
+  }
