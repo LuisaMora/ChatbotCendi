@@ -16,3 +16,11 @@ ia2_entorno\Scripts\activate.ps1
 ia2_entorno\Scripts\python.exe -m pip install --upgrade pip
 pip install -U nltk  numpy tensorflow flask
 ```
+
+### Instalar dependencias para fronted
+Importante tener instalado node.js
+```powershell
+npm install -g npm@8.13.1
+npm install express
+npm install nodemon
+```
