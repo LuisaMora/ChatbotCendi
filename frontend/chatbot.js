@@ -1,7 +1,9 @@
 
 async function personaAgregaMensaje() {
+    
     const input = document.getElementById("userin")
     const mensaje = input.value;
+    var respuesta = "";
     const options = {
         mode: "no-cors",
         method: 'POST',
@@ -11,66 +13,34 @@ async function personaAgregaMensaje() {
         },
         "body": { "mensaje": mensaje }
     };
-    if (mensaje) {
 
-        // fetch(`http://localhost:5050/chatbot/${mensaje}`, {
-        //     mode: "no-cors",
-        //     headers : {
-        //         'Content-Type': 'application/json'
-        //     },
-        //     method : 'POST', 
-        //     body : JSON.stringify( {  
-        //         'mensaje' : 'Holi'
-        //     })
-        // })
-        // .then(function (response){ 
-        //     console.log(response.json())
-        //     if(response.ok) {  
-
-        //         response.json() 
-        //         .then(function(response) {
-        //             console.log(response)
-        //         });
-        //     }
-        //     else {
-        //         throw Error('Something went wrong');
-        //     }
-        // })
-        // .catch(function(error) {
-        //     console.log(error);
-        // });
-        // $.post("http://127.0.0.1:5050/chatbot",
-        //     {
-        //         id: 1,
-        //         title: "What is AJAX",
-        //         body: JSON.stringify({'mensaje':"Holitas"})
-        //     },
-        //     function (data, status) {
-        //         if (status === "success") {
-        //             console.log("Post successfully created!")
-        //         }
-        //     },
-        //     "json")
-        // $.ajax({
-        //     type : 'POST',
-        //     url : "http://127.0.0.1:5050/chatbot",
-        //     contentType: 'application/json;charset=UTF-8',
-        //     data : {'mensaje':"Holitas"}
-        //   })
-        await fetch(`http://localhost:5050/chatbot/${mensaje}`, options)
-            .then(response => {
-                console.log(response)
-                console.log("--------------")
-                if (!response.ok) {
-
-                    throw Error(response.status);
-                }
-                console.log(response.json)
+    await fetch(`http://localhost:4000/response?mensaje=${mensaje}`, {
+            method : 'POST', 
+            mode: "no-cors",
             })
-            .catch(e => {
-                console.log(e);
-            });
-
+        
+    .then(async response => {
+                    console.log(response)
+                    console.log("--------------")
+                    if (!response.ok) {
+    
+                        // throw Error(response.status);
+                    }else{
+                        respuesta = await fetch("./data.json")
+                        .then(async response => {
+                            return await response.json().then(mensajito => {
+                                                            console.log(mensajito)
+                                                            return mensajito
+                                                            // respuesta = mensajito
+                                                            }
+                                )
+                        })
+                    }
+                    
+                })
+    .catch(e => {
+                    console.log(e);
+                });
         input.value = ""
         const div3 = document.createElement("div");
         div3.className = "media media-chat media-chat-reverse"
@@ -93,11 +63,11 @@ async function personaAgregaMensaje() {
 
         const app2 = document.querySelector("#chat-content");
         app2.insertAdjacentElement("beforeend", div3)
-        botAgregaMensaje();
-    }
+        botAgregaMensaje(respuesta);
+    
 
 }
-function botAgregaMensaje() {
+function botAgregaMensaje(mensajeBot) {
     // chat del chatbot-----------------------
     const div1 = document.createElement("div");
     div1.className = "media media-chat"
@@ -107,7 +77,7 @@ function botAgregaMensaje() {
     img.src = "https://img.icons8.com/color/344/bmo.png"
     img.alt = "..."
     const p1 = document.createElement("p")
-    p1.textContent = "holi esto es una prueba che "
+    p1.textContent = mensajeBot
 
     const div2 = document.createElement("div");
     div2.className = "media-body"

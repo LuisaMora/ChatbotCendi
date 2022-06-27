@@ -1,6 +1,7 @@
 from flask import Flask, jsonify, request
 from train_chatbot import train
 from chatgui import chatbot_response
+import json
 
 app = Flask(__name__)
 
@@ -17,6 +18,11 @@ def post_metodo(index_no):
         print(mensaje)
         respuesta = chatbot_response(mensaje)
         print(f"-----*************{respuesta}")
+
+        data_json = json.dumps(respuesta)
+        archivo_json = open("../frontend/data.json","w")
+        archivo_json.write(data_json)
+        archivo_json.close()
         return jsonify({"body":respuesta}),200
     except Exception as e:
         print(e)
