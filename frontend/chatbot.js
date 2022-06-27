@@ -1,8 +1,76 @@
 
-function personaAgregaMensaje() {
+async function personaAgregaMensaje() {
     const input = document.getElementById("userin")
     const mensaje = input.value;
+    const options = {
+        mode: "no-cors",
+        method: 'POST',
+        "headers": {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        "body": { "mensaje": mensaje }
+    };
     if (mensaje) {
+
+        // fetch(`http://localhost:5050/chatbot/${mensaje}`, {
+        //     mode: "no-cors",
+        //     headers : {
+        //         'Content-Type': 'application/json'
+        //     },
+        //     method : 'POST', 
+        //     body : JSON.stringify( {  
+        //         'mensaje' : 'Holi'
+        //     })
+        // })
+        // .then(function (response){ 
+        //     console.log(response.json())
+        //     if(response.ok) {  
+
+        //         response.json() 
+        //         .then(function(response) {
+        //             console.log(response)
+        //         });
+        //     }
+        //     else {
+        //         throw Error('Something went wrong');
+        //     }
+        // })
+        // .catch(function(error) {
+        //     console.log(error);
+        // });
+        // $.post("http://127.0.0.1:5050/chatbot",
+        //     {
+        //         id: 1,
+        //         title: "What is AJAX",
+        //         body: JSON.stringify({'mensaje':"Holitas"})
+        //     },
+        //     function (data, status) {
+        //         if (status === "success") {
+        //             console.log("Post successfully created!")
+        //         }
+        //     },
+        //     "json")
+        // $.ajax({
+        //     type : 'POST',
+        //     url : "http://127.0.0.1:5050/chatbot",
+        //     contentType: 'application/json;charset=UTF-8',
+        //     data : {'mensaje':"Holitas"}
+        //   })
+        await fetch(`http://localhost:5050/chatbot/${mensaje}`, options)
+            .then(response => {
+                console.log(response)
+                console.log("--------------")
+                if (!response.ok) {
+
+                    throw Error(response.status);
+                }
+                console.log(response.json)
+            })
+            .catch(e => {
+                console.log(e);
+            });
+
         input.value = ""
         const div3 = document.createElement("div");
         div3.className = "media media-chat media-chat-reverse"

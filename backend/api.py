@@ -8,15 +8,18 @@ app = Flask(__name__)
 def get_respuesta():
     return jsonify({"mensaje":"Hola a todos"})
 
-@app.route('/chatbot', methods=['POST'])
-def post_metodo():
+@app.route('/chatbot/<index_no>', methods=['POST'])
+def post_metodo(index_no):
     try:
-        mensaje = request.json
+        # print(request.get_text())
+        print(index_no)
+        mensaje = index_no
         print(mensaje)
-        respuesta = chatbot_response(mensaje["mensaje"])
-        return jsonify({"mensaje":respuesta})
+        respuesta = chatbot_response(mensaje)
+        print(f"-----*************{respuesta}")
+        return jsonify({"body":respuesta}),200
     except Exception as e:
-        print(Exception)
+        print(e)
         return jsonify({"mensaje":"Error al obtener la respuesta"}),500
 
 @app.route('/chatbot/entrenar', methods=['GET'])
