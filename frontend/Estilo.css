@@ -5,26 +5,51 @@
     margin: 0;
 }
 #titulo{
-    background-color: rgb(192, 40, 40);
+    background-color: #fd2828;
     text-align: center;
     font-size: 80px;
-    color: white;
+    color: rgb(255, 255, 255);
     text-shadow: 3px 3px 0px #2c28fd, 
     5px 5px 0px  #0b1784,
     7px 7px 0px   rgb(5, 11, 83);
     padding: 10px;
-    margin-bottom: 10px;
+    flex: auto;
+    margin: 10px 10px 2px 0;
+    border-radius: 5px;
+}
+
+#footr{
+    font-size: 15px;
+    padding: 20px;
+}
+.caja1{
+    background-color: #fd2828;
+    display: flex;
+    padding-left: 20px;
+}
+#imagen{
+    margin: 10px;
+    border-radius: 150px;
+    background-color: #fd2828;
 }
 #caja{
     padding: 20px;
     margin: 10px;
+    display: flex;
+}
+#letra{
+    background-color: #0a157e;
+    color: white;
+    padding: 30px;
+    margin: 5px;
+    border-radius: 10px;
 }
 .chatbot{
     display: flex;
     justify-content: flex-end;
     margin-right: 4%
 }
-.boton_personalizado{
+#boton_personalizado{
     /* margin-left: 1000px; */
     text-decoration: none;
     padding: 10px;
