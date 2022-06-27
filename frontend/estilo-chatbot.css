@@ -1,7 +1,36 @@
+*{
+    background-color: rgb(255, 255, 255);
+    font-family: 'Courier New', Courier, monospace;
+    padding: 0;
+    margin: 0;
+}
 .card-bordered {
-    border: 1px solid #ebebeb;
+    border: 1px solid #e90000;
+}
+#titulo{
+    background-color:#fd2828;
+    text-align: center;
+    font-size: 80px;
+    color: white;
+    text-shadow: 3px 3px 0px #2c28fd, 
+    5px 5px 0px  #0b1784,
+    7px 7px 0px   rgb(5, 11, 83);
+    padding: 10px;
+    flex: auto;
+    margin: 10px 10px 0 0;
+    border-radius: 5px;
 }
 
+.caja1{
+    background-color: #fd2828;
+    display: flex;
+    padding-left: 20px;
+}
+#imagen{
+    margin: 10px;
+    border-radius: 150px;
+    background-color: #fd2828;
+}
 .card {
     border: 0;
     border-radius: 0px;
@@ -130,7 +159,7 @@ h4.card-title {
     text-align: center;
     border-radius: 100%;
     background-color: #cfdce9;
-    color: #3972ce;
+    color: #043687;
     /* text-transform: uppercase; */
 }
 
@@ -149,10 +178,10 @@ h4.card-title {
     position: relative;
     padding: 6px 8px;
     margin: 4px 0;
-    background-color: #f5f6f7;
+    background-color: #ec1d1d;
     border-radius: 3px;
     font-weight: 100;
-    color:#9b9b9b;
+    color:#ffffff;
 }
 
 .media>* {
@@ -160,7 +189,7 @@ h4.card-title {
 }
 
 .media-chat .media-body p.meta {
-    background-color: transparent !important;
+    background-color: #e90000;
     padding: 0;
     opacity: .8;
 }
@@ -228,15 +257,15 @@ h4.card-title {
 .media-chat.media-chat-reverse .media-body p {
     float: right;
     clear: right;
-    background-color: #48b0f7;
-    color: #fff;
+    background-color: #00288f;
+    color: rgb(255, 255, 255);
 }
 
 .media-chat .media-body p {
     position: relative;
     padding: 6px 8px;
     margin: 4px 0;
-    background-color: #f5f6f7;
+    background-color: #ff0000;
     border-radius: 3px;
 }
 
@@ -256,7 +285,7 @@ h4.card-title {
     -webkit-box-align: center;
     align-items: center;
     padding: 12px 20px;
-    background-color: #f9fafb;
+    background-color: #fbf9f9;
 }
 
 .publisher>*:first-child {
