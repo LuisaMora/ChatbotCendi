@@ -5,7 +5,7 @@ from tensorflow.keras.models import Sequential
 import numpy as np
 import pickle
 import json
-from nlp_procesamiento import tokenizar
+from nlp_procesamiento import tokenizar, lemmatizar
 import nltk
 
 from nltk.stem import WordNetLemmatizer
@@ -14,10 +14,11 @@ lemmatizer = WordNetLemmatizer()
 
 def entrenarModelo():
     palabras_tokenizadas = []
+    palabras_lematizadas = []
     etiquetas = []
     etiquetas_relacionadas = []
     char_ignorar = ['?', '!']
-    archivo_patrones = open('intents.json').read()
+    archivo_patrones = open('./intents.json').read()
 
     dict_patrones = json.loads(archivo_patrones)
     for textos in dict_patrones['intents']:
@@ -25,8 +26,14 @@ def entrenarModelo():
         palabras_tokenizadas += p
         etiquetas += etiqueta
         etiquetas_relacionadas += etiq_rel
-    print(palabras_tokenizadas)
-
+    # print(palabras_tokenizadas)
+    palabras_lematizadas = sorted(list(set(lemmatizar(palabras_tokenizadas))))
+    etiquetas = sorted(list(set(etiquetas)))
+    print(len(etiquetas_relacionadas), "documents")
+    # classes = intents
+    print(len(etiquetas), "classes", etiquetas)
+    # words = all words, vocabulary
+    print(len(palabras_lematizadas), "unique lemmatized words", palabras_lematizadas)
 
 def train():
     nltk.download('punkt')
@@ -51,7 +58,7 @@ def train():
             # add to our classes list
             if intent['tag'] not in classes:
                 classes.append(intent['tag'])
-    print(words)
+    # print(words)
     # lemmaztize and lower each word and remove duplicates
     words = [lemmatizer.lemmatize(w.lower())
              for w in words if w not in ignore_words]

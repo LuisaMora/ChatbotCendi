@@ -24,12 +24,14 @@ def tokenizar(lista_patrones: List[str], etiqueta: str) -> List[str]:
         palabras_con_token.extend(w)
         # add documents in the corpus
         documentos.append((w, etiqueta))
-
         # add to our classes list
         if etiqueta not in clases:
             clases.append(etiqueta)
     return palabras_con_token, clases, documentos
 
 
-def lemmatizar():
-    pass
+def lemmatizar(palabras_tokenizadas):
+    palabras_a_ignorar = ['?', '!']
+    pal_lematizada = [lemmatizer.lemmatize(palabra.lower())
+             for palabra in palabras_tokenizadas if palabra not in palabras_a_ignorar]
+    return pal_lematizada
