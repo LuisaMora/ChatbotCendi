@@ -20,7 +20,7 @@ def post_metodo(index_no):
         print(f"-----*************{respuesta}")
 
         data_json = json.dumps(respuesta)
-        archivo_json = open("../frontend/data.json","w")
+        archivo_json = open("frontend\data.json","w")
         archivo_json.write(data_json)
         archivo_json.close()
         return jsonify({"body":respuesta}),200
