@@ -17,6 +17,7 @@
     margin: 0 10px 2px 0;
     border-radius: 5px;
 }
+
 .caja1{
     display: flex;
 }
@@ -40,7 +41,7 @@
     justify-content: flex-end;
     margin-right: 4%
 }
-.boton_personalizado{
+#boton_personalizado{
     /* margin-left: 1000px; */
     text-decoration: none;
     padding: 10px;
