@@ -9,7 +9,7 @@
     border: 1px solid #e90000;
 }
 #titulo{
-    background-color: rgb(192, 40, 40);
+    background-color:#fd2828;
     text-align: center;
     font-size: 80px;
     color: white;
@@ -18,15 +18,19 @@
     7px 7px 0px   rgb(5, 11, 83);
     padding: 10px;
     flex: auto;
-    margin: 0 10px 0 0;
+    margin: 10px 10px 0 0;
     border-radius: 5px;
 }
 
 .caja1{
+    background-color: #fd2828;
     display: flex;
+    padding-left: 20px;
 }
 #imagen{
     margin: 10px;
+    border-radius: 150px;
+    background-color: #fd2828;
 }
 .card {
     border: 0;
