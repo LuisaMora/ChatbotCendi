@@ -14,20 +14,22 @@ nltk.download('omw-1.4')
 lemmatizer = WordNetLemmatizer()
 
 
-def tokenizar(lista_patrones: List[str], etiqueta: str) -> List[str]:
-    palabras_con_token = []
-    clases = []
-    documentos = []
-    for pattern in lista_patrones:
-        # tokenize each word
-        w = nltk.word_tokenize(pattern, language="spanish")
-        palabras_con_token.extend(w)
-        # add documents in the corpus
-        documentos.append((w, etiqueta))
-        # add to our classes list
-        if etiqueta not in clases:
-            clases.append(etiqueta)
-    return palabras_con_token, clases, documentos
+def tokenizar(lista_patrones: List[str], etiqueta: str):
+    if etiqueta:
+        palabras_con_token = []
+        clases = []
+        documentos = []
+        for pattern in lista_patrones:
+            # tokenize each word
+            w = nltk.word_tokenize(pattern, language="spanish")
+            palabras_con_token.extend(w)
+            # add documents in the corpus
+            documentos.append((w, etiqueta))
+            # add to our classes list
+            if etiqueta not in clases:
+                clases.append(etiqueta)
+        return palabras_con_token, clases, documentos
+    return nltk.word_tokenize(lista_patrones, language="spanish")
 
 
 def lemmatizar(palabras_tokenizadas):

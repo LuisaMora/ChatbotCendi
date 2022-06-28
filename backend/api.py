@@ -1,10 +1,10 @@
 from flask import Flask, jsonify, request
 from train_chatbot import entrenarModelo
-from chatgui import chatbot_response
+from chatgui import ChatBot
 import json
 
 app = Flask(__name__)
-
+chatbot = ChatBot()
 @app.route('/chatbot', methods=['GET'])
 def get_respuesta():
     return jsonify({"mensaje":"Hola a todos"})
@@ -16,7 +16,7 @@ def post_metodo(index_no):
         print(index_no)
         mensaje = index_no
         print(mensaje)
-        respuesta = chatbot_response(mensaje)
+        respuesta = chatbot.chatbot_response(mensaje)
         print(f"-----*************{respuesta}")
 
         data_json = json.dumps(respuesta)
