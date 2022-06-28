@@ -1,5 +1,5 @@
 from flask import Flask, jsonify
-from train_chatbot import entrenar_modelo
+from entrenador import entrenar_modelo
 from chatgui import ChatBot
 import json
 

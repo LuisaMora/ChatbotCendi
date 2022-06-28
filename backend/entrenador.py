@@ -1,7 +1,7 @@
 import pickle
 import json
 from nlp_procesamiento import tokenizar, lemmatizar
-from entrenador import procesado_datos, entrenar
+from funciones_entrenamiento import procesado_datos, entrenar
 
 def entrenar_modelo():
     palabras_tokenizadas = []
