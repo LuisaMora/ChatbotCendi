@@ -1,6 +1,6 @@
 
 {
-   "intents":[
+   "preguntas":[
       {
          "tag":"saludos",
          "patterns":[

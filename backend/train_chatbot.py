@@ -11,7 +11,7 @@ def entrenar_modelo():
     archivo_patrones = open('./preguntas.json').read()
 
     dict_patrones = json.loads(archivo_patrones)
-    for textos in dict_patrones['intents']:
+    for textos in dict_patrones['preguntas']:
         p, etiqueta, etiq_rel, = tokenizar(textos["patterns"], textos["tag"])
         palabras_tokenizadas += p
         etiquetas += etiqueta

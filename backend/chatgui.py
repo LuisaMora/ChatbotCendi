@@ -35,12 +35,12 @@ class ChatBot:
         results.sort(key=lambda x: x[1], reverse=True)
         return_list = []
         for r in results:
-            return_list.append({"intent": self.etiquetas[r[0]], "probability": str(r[1])})
+            return_list.append({"pregunta": self.etiquetas[r[0]], "probability": str(r[1])})
         return return_list
 
     def _obtener_respuesta(self,respuestas_probables):
-        tag = respuestas_probables[0]['intent']
-        lista_patrones = self.corpus['intents']
+        tag = respuestas_probables[0]['pregunta']
+        lista_patrones = self.corpus['preguntas']
         for patron_con_tag in lista_patrones:
             if(patron_con_tag['tag']== tag):
                 result = random.choice(patron_con_tag['responses'])

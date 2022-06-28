@@ -11,7 +11,7 @@ def procesado_datos(palabras_lematizadas,etiquetas_relacionadas, etiquetas):
     for palabras_etiqueta in etiquetas_relacionadas:
         patron_palabras = palabras_etiqueta[0]
         patron_palabras = lemmatizar(patron_palabras)
-        bag_pal = [ bag_pal.append(1) if palabra in patron_palabras else bag_pal.append(0) for palabra in palabras_lematizadas]
+        bag_pal = [ 1 if palabra in patron_palabras else 0 for palabra in palabras_lematizadas]
 
         bag_etiq = list(salidas_vacias)
         bag_etiq[etiquetas.index(palabras_etiqueta[1])] = 1
