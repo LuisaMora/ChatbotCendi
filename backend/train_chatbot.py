@@ -1,17 +1,7 @@
-import random
-from tensorflow.keras.optimizers import SGD
-from tensorflow.keras.layers import Dense, Activation, Dropout
-from tensorflow.keras.models import Sequential
-import numpy as np
 import pickle
 import json
 from nlp_procesamiento import tokenizar, lemmatizar
 from entrenador import procesado_datos, entrenar
-import nltk
-
-from nltk.stem import WordNetLemmatizer
-lemmatizer = WordNetLemmatizer()
-
 
 def entrenarModelo():
     palabras_tokenizadas = []
@@ -35,17 +25,5 @@ def entrenarModelo():
     entrenar(train_x,train_y)
 
 
-
 if __name__ == "__main__":
     entrenarModelo()
-    # train()
-    # words=[]
-    # classes = []
-    # documents = []
-    # ignore_words = ['?', '!']
-    # data_file = open('intents.json').read()
-    # intents = json.loads(data_file)
-
-    # for intent in intents['intents']:
-    #     words+=tokenizar(intent["patterns"],intent["tag"])
-    # print(words)

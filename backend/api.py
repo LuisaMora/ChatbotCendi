@@ -1,5 +1,5 @@
 from flask import Flask, jsonify, request
-from train_chatbot import train
+from train_chatbot import entrenarModelo
 from chatgui import chatbot_response
 import json
 
@@ -31,7 +31,7 @@ def post_metodo(index_no):
 @app.route('/chatbot/entrenar', methods=['GET'])
 def post_metodo_entrenar():
     try:
-        train()
+        entrenarModelo()
         return jsonify({"mensaje":"Modelo entrenado"})
     except:
         return jsonify({"mensaje":"Error al entrenar el modelo"}),500
