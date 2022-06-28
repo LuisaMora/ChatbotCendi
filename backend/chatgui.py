@@ -10,55 +10,46 @@ from nlp_procesamiento import tokenizar,lemmatizar
 
 class ChatBot:
     def __init__(self) -> None:
-        self.model = load_model('./chatbot_model.h5')
-        self.intents = json.loads(open('./intents.json').read())
-        self.words = pickle.load(open('./palabras_lematizadas.pkl','rb'))
-        self.classes = pickle.load(open('./etiquetas.pkl','rb'))
+        self.modelo = load_model('./chatbot_model.h5')
+        self.corpus = json.loads(open('./intents.json').read())
+        self.palabras_lematizadas = pickle.load(open('./palabras_lematizadas.pkl','rb'))
+        self.etiquetas = pickle.load(open('./etiquetas.pkl','rb'))
 
-    # return bag of words array: 0 or 1 for each word in the bag that exists in the sentence
-
-    def _bow(self, sentence, show_details=True):
-        # tokenize the pattern
-        print(sentence )
+    def _buscar_pal_lematizada(self, sentence, show_details=True):
         pal_tokenizada = tokenizar(sentence,"")
-        print(pal_tokenizada)
         pal_lemmatizda = lemmatizar(pal_tokenizada)
-        # bag of words - matrix of N words, vocabulary matrix
-        bag = [0]*len(self.words)  
+        bag_pal = [0]*len(self.palabras_lematizadas)  
         for s in pal_lemmatizda:
-            for i,w in enumerate(self.words):
+            for i,w in enumerate(self.palabras_lematizadas):
                 if w == s: 
-                    # assign 1 if current word is in the vocabulary position
-                    bag[i] = 1
+                    bag_pal[i] = 1
                     if show_details:
                         print ("found in bag: %s" % w)
-        return(np.array(bag))
+        return(np.array(bag_pal))
 
-    def _predict_class(self,sentence):
-        # filter out predictions below a threshold
-        p = self._bow(sentence,show_details=True)
-        res = self.model.predict(np.array([p]))[0]
+    def _predecir_tag(self,sentence):
+        p = self._buscar_pal_lematizada(sentence,show_details=True)
+        res = self.modelo.predict(np.array([p]))[0]
         ERROR_THRESHOLD = 0.25
         results = [[i,r] for i,r in enumerate(res) if r>ERROR_THRESHOLD]
-        # sort by strength of probability
         results.sort(key=lambda x: x[1], reverse=True)
         return_list = []
         for r in results:
-            return_list.append({"intent": self.classes[r[0]], "probability": str(r[1])})
+            return_list.append({"intent": self.etiquetas[r[0]], "probability": str(r[1])})
         return return_list
 
-    def _getResponse(self,ints):
-        tag = ints[0]['intent']
-        list_of_intents = self.intents['intents']
-        for i in list_of_intents:
-            if(i['tag']== tag):
-                result = random.choice(i['responses'])
+    def _obtener_respuesta(self,respuestas_probables):
+        tag = respuestas_probables[0]['intent']
+        lista_patrones = self.corpus['intents']
+        for patron_con_tag in lista_patrones:
+            if(patron_con_tag['tag']== tag):
+                result = random.choice(patron_con_tag['responses'])
                 break
         return result
 
-    def chatbot_response(self,msg):
-        ints = self._predict_class(msg)
-        print(ints)
-        res = self._getResponse(ints)
+    def responde(self,mensaje):
+        respuestas_probables = self._predecir_tag(mensaje)
+        print(respuestas_probables)
+        res = self._obtener_respuesta(respuestas_probables)
         return res
 

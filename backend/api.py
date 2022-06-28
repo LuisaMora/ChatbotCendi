@@ -16,7 +16,7 @@ def post_metodo(index_no):
         print(index_no)
         mensaje = index_no
         print(mensaje)
-        respuesta = chatbot.chatbot_response(mensaje)
+        respuesta = chatbot.responde(mensaje)
         print(f"-----*************{respuesta}")
 
         data_json = json.dumps(respuesta)
