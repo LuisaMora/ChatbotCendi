@@ -217,6 +217,50 @@
          "context":[
             ""
          ]
+      },
+      {
+         "tag":"direccion",
+         "patterns":[
+            "Cual es la direccion del colegio",
+            "Direccion"
+         ],
+         "responses":[
+            "Calle Sucre entre JosePol y Torres "
+         ],
+         "context":[
+            ""
+         ]
+      },
+      {
+         "tag":"telefono",
+         "patterns":[
+            "Cual es el telefono del colegio",
+            "Telefono"
+         ],
+         "responses":[
+            "El numero de telefono es : 4532222 "
+         ],
+         "context":[
+            ""
+         ]
+      },
+      {
+         "tag":"despedidas",
+         "patterns":[
+            "bye",
+            "adios",
+            "gracias",
+            "chau",
+            "Hasta luego"
+         ],
+         "responses":[
+            "Adios,gracias por preguntar",
+            "Adios que bueno haberte ayudado",
+            "Adios ,si tienes mas dudas no olvides que puedes preguntar"
+         ],
+         "context":[
+            ""
+         ]
       }
    ]
 }
