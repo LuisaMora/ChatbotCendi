@@ -10,8 +10,8 @@ from nlp_procesamiento import tokenizar,lemmatizar
 
 class ChatBot:
     def __init__(self) -> None:
-        self.modelo = load_model('./chatbot_model.h5')
-        self.corpus = json.loads(open('./intents.json').read())
+        self.modelo = load_model('./modelo_generado.h5')
+        self.corpus = json.loads(open('./preguntas.json').read())
         self.palabras_lematizadas = pickle.load(open('./palabras_lematizadas.pkl','rb'))
         self.etiquetas = pickle.load(open('./etiquetas.pkl','rb'))
 
