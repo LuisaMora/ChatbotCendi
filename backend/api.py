@@ -1,10 +1,9 @@
-from flask import Flask, jsonify, request
-from train_chatbot import entrenarModelo
+from flask import Flask, jsonify
+from train_chatbot import entrenar_modelo
 from chatgui import ChatBot
 import json
 
 app = Flask(__name__)
-chatbot = ChatBot()
 @app.route('/chatbot', methods=['GET'])
 def get_respuesta():
     return jsonify({"mensaje":"Hola a todos"})
@@ -12,7 +11,7 @@ def get_respuesta():
 @app.route('/chatbot/<index_no>', methods=['POST'])
 def post_metodo(index_no):
     try:
-        # print(request.get_text())
+        chatbot = ChatBot()
         print(index_no)
         mensaje = index_no
         print(mensaje)
@@ -31,7 +30,7 @@ def post_metodo(index_no):
 @app.route('/chatbot/entrenar', methods=['GET'])
 def post_metodo_entrenar():
     try:
-        entrenarModelo()
+        entrenar_modelo()
         return jsonify({"mensaje":"Modelo entrenado"})
     except:
         return jsonify({"mensaje":"Error al entrenar el modelo"}),500

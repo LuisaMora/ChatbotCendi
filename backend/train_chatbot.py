@@ -3,12 +3,12 @@ import json
 from nlp_procesamiento import tokenizar, lemmatizar
 from entrenador import procesado_datos, entrenar
 
-def entrenarModelo():
+def entrenar_modelo():
     palabras_tokenizadas = []
     palabras_lematizadas = []
     etiquetas = []
     etiquetas_relacionadas = []
-    archivo_patrones = open('./intents.json').read()
+    archivo_patrones = open('./preguntas.json').read()
 
     dict_patrones = json.loads(archivo_patrones)
     for textos in dict_patrones['intents']:
@@ -16,7 +16,6 @@ def entrenarModelo():
         palabras_tokenizadas += p
         etiquetas += etiqueta
         etiquetas_relacionadas += etiq_rel
-    # print(palabras_tokenizadas)
     palabras_lematizadas = sorted(list(set(lemmatizar(palabras_tokenizadas))))
     etiquetas = sorted(list(set(etiquetas)))
     pickle.dump(palabras_lematizadas, open('palabras_lematizadas.pkl', 'wb'))
@@ -26,4 +25,4 @@ def entrenarModelo():
 
 
 if __name__ == "__main__":
-    entrenarModelo()
+    entrenar_modelo()
